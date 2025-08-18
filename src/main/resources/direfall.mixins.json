@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.ramixin.direfall.mixins",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "CreeperEntityMixin",
+    "CreeperIgniteGoalMixin",
+    "LevelPropertiesMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  },
+  "mixinextras": {
+    "minVersion": "0.5.0"
+  }
+}
