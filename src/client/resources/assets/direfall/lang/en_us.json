@@ -1,0 +1,5 @@
+{
+  "commands.player.direfall.intensity.get": "The intensity is %s",
+  "commands.player.direfall.intensity.set": "The intensity has been set to %s",
+  "commands.player.direfall.intensity.fail": "The intensity did not change; it is already set to %s"
+}

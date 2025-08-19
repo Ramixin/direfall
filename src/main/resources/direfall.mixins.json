@@ -4,9 +4,18 @@
   "package": "net.ramixin.direfall.mixins",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "AbstractSkeletonEntityMixin",
     "CreeperEntityMixin",
     "CreeperIgniteGoalMixin",
-    "LevelPropertiesMixin"
+    "EntityAttributesMixin",
+    "EntityMixin",
+    "FleeEntityGoalAccessor",
+    "LevelPropertiesMixin",
+    "LivingEntityMixin",
+    "NetherPortalMixin",
+    "SpawnHelperMixin",
+    "UnmodifiableLevelPropertiesMixin",
+    "WardenEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

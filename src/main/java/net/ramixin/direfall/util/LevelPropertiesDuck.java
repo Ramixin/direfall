@@ -1,4 +1,6 @@
-package net.ramixin.direfall;
+package net.ramixin.direfall.util;
+
+import net.ramixin.direfall.Intensity;
 
 public interface LevelPropertiesDuck {
 

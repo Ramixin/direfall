@@ -6,8 +6,8 @@ import net.minecraft.util.StringIdentifiable;
 public enum Intensity implements StringIdentifiable {
     MORTAL("mortal"),
     CURSED("cursed"),
-    TORMENTED("tormented"),
-    DAMNED("damned")
+    DAMNED("damned"),
+    TORMENTED("tormented")
 
     ;
 
@@ -22,5 +22,19 @@ public enum Intensity implements StringIdentifiable {
         return id;
     }
 
+    public String getName() {
+        return id.substring(0, 1).toUpperCase() + id.substring(1);
+    }
+
     public static final Codec<Intensity> CODEC = StringIdentifiable.createCodec(Intensity::values);
+
+    public static Intensity fromString(String name) {
+        return switch(name) {
+            case "mortal" -> MORTAL;
+            case "cursed" -> CURSED;
+            case "damned" -> DAMNED;
+            case "tormented" -> TORMENTED;
+            default -> throw new IllegalArgumentException("Unknown intensity: " + name);
+        };
+    }
 }

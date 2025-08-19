@@ -51,8 +51,8 @@ public class CreeperIgniteGoalMixin {
     @ModifyExpressionValue(method = "canStart", at = @At("MIXINEXTRAS:EXPRESSION"))
     private double increaseCreeperIgnitionRadius(double original) {
         if(!(this.creeper.getWorld() instanceof ServerWorld serverWorld)) return original;
-        if(Direfall.getIntensity(serverWorld).ordinal() == 0) return original;
-        return 25;
+        if(Direfall.isIntensityAbove(serverWorld, 0)) return 25;
+        else return original;
     }
 
     @Expression("49.0")
@@ -66,14 +66,14 @@ public class CreeperIgniteGoalMixin {
     @Inject(method = "start", at = @At("HEAD"))
     private void increaseCreeperMovementSpeedWhenPrimed(CallbackInfo ci) {
         if(!(this.creeper.getWorld() instanceof ServerWorld serverWorld)) return;
-        if(Direfall.getIntensity(serverWorld).ordinal() > 0)
+        if(Direfall.isIntensityAbove(serverWorld, 0))
             this.creeper.getNavigation().setSpeed(1.15);
     }
 
     @Inject(method = "stop", at = @At("HEAD"))
     private void decreaseCreeperMovementSpeedWhenCancelled(CallbackInfo ci) {
         if(!(this.creeper.getWorld() instanceof ServerWorld serverWorld)) return;
-        if(Direfall.getIntensity(serverWorld).ordinal() > 0)
+        if(Direfall.isIntensityAbove(serverWorld, 0))
             this.creeper.getNavigation().setSpeed(1);
     }
 
